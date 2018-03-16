@@ -309,7 +309,7 @@
 </style>
 
 <template>
-  <div :dir="dir" class="dropdown v-select" :class="dropdownClasses">
+  <div :dir="dir" class="dropdown v-select" :class="[theme, dropdownClasses]">
     <div ref="toggle" @mousedown.prevent="toggleDropdown" :class="['dropdown-toggle', 'clearfix']">
 
       <slot v-for="option in valueAsArray" name="selected-option-container"
@@ -679,6 +679,10 @@
       dir: {
         type: String,
         default: 'auto'
+      },
+      theme: {
+        type: String,
+        default: ''
       },
     },
 
