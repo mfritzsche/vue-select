@@ -777,6 +777,7 @@
        * @return {void}
        */
       select(option) {
+        this.$emit('select', option)
         if (!this.isOptionSelected(option)) {
           if (this.taggable && !this.optionExists(option)) {
             option = this.createOption(option)
@@ -800,6 +801,7 @@
        * @return {void}
        */
       deselect(option) {
+        this.$emit('deselect', option)
         if (this.multiple) {
           let ref = -1
           this.mutableValue.forEach((val) => {
@@ -828,6 +830,7 @@
        * @return {void}
        */
       onAfterSelect(option) {
+        this.$emit('afterSelect', option)
         if (this.closeOnSelect) {
           this.open = !this.open
           this.$refs.search.blur()
@@ -995,6 +998,7 @@
        * @return {Boolean} True if non empty value
        */
       searching() {
+        this.$emit('searching', !!this.search)
         return !!this.search
       },
 
