@@ -696,6 +696,9 @@
     },
 
     watch: {
+      open(val) {
+        this.$emit('open', val)
+      },
       /**
        * When the value prop changes, update
 			 * the internal mutableValue.
