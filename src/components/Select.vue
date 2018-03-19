@@ -697,6 +697,8 @@
 
     watch: {
       open(val) {
+        console.log('open watch: ', val);
+        
         this.$emit('open', val)
       },
       /**
